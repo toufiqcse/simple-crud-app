@@ -25,8 +25,8 @@ const Members = () => {
     }
 
     return (
-        <div className='w-full mx-auto'>
-            <table className='table-auto border-separate border border-slate-500 overflow-y-scroll'>
+        <div className='w-full '>
+            <table className='table-auto border-separate border border-slate-500 overflow-y-scroll mb-6'>
                 {/* <h3>Total Member {members.length}</h3> */}
                 <thead className='bg-orange-700 text-white'>
                     <tr className=''>
@@ -45,12 +45,12 @@ const Members = () => {
                         members.map((member) => (
 
                             <tr key={member?._id} className=" hover:cursor-pointer hover:transition-all duration-500  hovered-row  font-medium hover:bg-purple-800  select-none bg-purple-700 text-slate-200 ">
-                                <td className="px-4  border-gray-500">
+                                <td className="  px-1">
                                     {member?.name}
                                 </td>
-                                <td className='px-4  border-gray-500'>{member?.email}</td>
-                                <td className='px-4  border-gray-500'>{member?.roles}</td>
-                                <td className='px-4  border-gray-500'>
+                                <td className='  border-gray-500'>{member?.email}</td>
+                                <td className='  border-gray-500'>{member?.roles}</td>
+                                <td className='  border-gray-500'>
                                     {member?.ratings}
                                 </td>
                                 <td className="px-4  border-gray-500 ">
@@ -62,14 +62,14 @@ const Members = () => {
                                         alt={member?.selectedImage?.name}
                                     />
                                 </td>
-                                <td className=' px-4 border-gray-500'>
+                                <td className=' px-1 border-gray-500'>
                                     <Link to={`${member?._id}`}>
                                         <button className='bg-green-600 text-white border-none outline-none'>
                                             Update
                                         </button>
                                     </Link>
                                 </td>
-                                <td className=' border-gray-500 px-4'>
+                                <td className=' border-gray-500 px-1'>
                                     <button onClick={() => handleDeleteMember(member?._id)} className="bg-red-600 text-white border-none outline-none">
                                         Delete
                                     </button>
@@ -81,7 +81,7 @@ const Members = () => {
                 </tbody>
 
             </table>
-            <Link to={'/'}>Back to Home</Link>
+            <Link className='bg-red-700 px-4 py-2 hover:text-blue-300 rounded-sm text-white mt-4' to={'/'}>Back to Home</Link>
         </div>
     );
 };

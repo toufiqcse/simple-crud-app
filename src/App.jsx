@@ -54,8 +54,7 @@ function App() {
     const email = form.email.value
     const roles = form.role.value;
     const ratings = form.rating.value;
-
-    // const FBlink = form.fbLink.value;
+    const FBlink = form.fbLink.value;
     if (isValidFbLink) {
       // Process the form data
       console.log('Valid Facebook link:', FBlink);
@@ -81,7 +80,9 @@ function App() {
         if (data.insertedId) {
           alert('Member Added Successfully!')
         }
-        form.reset()
+        form.reset();
+        form.fbLink.value = '';
+        selectedImage.name = ''
       })
   }
 

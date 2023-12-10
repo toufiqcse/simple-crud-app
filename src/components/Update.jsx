@@ -5,7 +5,7 @@ import { Link, useLoaderData, useNavigate } from 'react-router-dom';
 
 const Update = () => {
     const loadedUser = useLoaderData()
-    const { name, email, ratings, role, FBlink, _id, selectedImage } = loadedUser;
+    const { name, email, ratings, roles, FBlink, _id, selectedImage } = loadedUser;
     const navigate = useNavigate()
     const [selectedImages, setSelectedImage] = useState(selectedImage);
     const [FBlinks, setFbLink] = useState(FBlink);
@@ -84,7 +84,6 @@ const Update = () => {
                     alert("Please Update the Field ")
                 }
             })
-
     }
     console.log(FBlinks);
 
@@ -100,7 +99,7 @@ const Update = () => {
                     <label htmlFor="email" className='text-xl pr-2 mb-1'>Email: </label>
                     <input className='w-full mb-3 px-4 py-1 border-none outline-none rounded-md text-xl' type="email" name="email" placeholder='email' id="" defaultValue={email} />
                     <label className='text-xl pr-2 mb-1' htmlFor="role">Role: </label>
-                    <select name="role" id="" defaultValue={role} className='w-full mb-3 px-4 py-1 border-none outline-none rounded-md text-xl'>
+                    <select name="role" id="" defaultValue={roles} className='w-full mb-3 px-4 py-1 border-none outline-none rounded-md text-xl'>
                         <option value="" >Select Role</option>
                         <option value="digital marketer">Digital Marketer</option>
                         <option value="web developer">Web Developer</option>
@@ -137,7 +136,6 @@ const Update = () => {
                         id="imageInput"
                         onChange={handleImageChange}
                         multiple={false}
-                        required
                         name="image"
                     />
                     <label
