@@ -67,7 +67,7 @@ function App() {
 
 
     // send to the server
-    fetch('http://localhost:5000/members', {
+    fetch('https://simple-crud-server-final.vercel.app/members', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'

@@ -67,7 +67,7 @@ const Update = () => {
         const members = { name, email, roles, ratings, FBlink, selectedImages }
         console.log(members);
         // send to the server
-        fetch(`http://localhost:5000/members/${_id}`, {
+        fetch(`https://simple-crud-server-final.vercel.app/members/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

@@ -10,7 +10,7 @@ const Members = () => {
 
     const handleDeleteMember = (_id) => {
         console.log("delete", _id);
-        fetch(`http://localhost:5000/members/${_id}`, {
+        fetch(`https://simple-crud-server-final.vercel.app/members/${_id}`, {
             method: "DELETE"
         })
             .then(res => res.json())
